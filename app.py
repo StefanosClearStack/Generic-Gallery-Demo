@@ -12,5 +12,8 @@ def index():
 def embedded():
     return render_template('embedded.html')
 
+@app.route('/mobile')
+def mobile():
+    return render_template('mobile.html')
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Demo Co-Pilot</title>
+    <style>
+      body {
+        background-color: #F6F7FA;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        font-family: Arial, sans-serif;
+    }
+      #flat-chat {
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+      #confetti-canvas {
+        position: fixed;
+        z-index: 999;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        pointer-events: none;
+      }
+      #overlay {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+        z-index: 1000; /* Higher than other elements */
+      }
+    </style>
+  </head>
+  <body style="overflow: hidden;">
+    <h1> ClearStackAI DEMO </h1>
+    <canvas id="confetti-canvas"></canvas>
+    <div id="flat-chat"></div>
+    <div id="voiceflow-chat-frame"></div>
+    <script src="https://cdn.voiceflow.com/widget/bundle.mjs" type="text/javascript"></script>
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+
+    <!-- Calendly Link-->
+    <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+    <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async=""></script>
+    
+    <!-- Calendly link widget begin -->
+    <script type="module">
+      import { CalendlyExtension, popform, FormExtension } from '/static/extensions.js';
+
+      (function (d, t) {
+        var v = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+        v.onload = function () {
+          window.voiceflow.chat.load({
+            verify: { projectID: '66885cf8515137fa4d3621ad' },
+            url: 'https://general-runtime.voiceflow.com',
+            versionID: 'production',
+            user: {
+              name: 'Demo User',
+            },
+            render: {
+              mode: 'overlay',
+            },
+            autostart: false,
+            allowDangerousHTML: true,
+            assistant: {
+              extensions: [
+                CalendlyExtension,
+                popform, 
+                FormExtension
+              ],
+              stylesheet: "http://localhost:5000/static/styles.css", // link to your self-hosted stylesheet
+            },
+          });
+        };
+        v.src = 'https://cdn.voiceflow.com/widget/bundle.mjs';
+        v.type = 'text/javascript';
+        s.parentNode.insertBefore(v, s);
+      })(document, 'script');
+    </script>
+    <!-- Calendly link widget end -->
+
+    <div id="voiceflow-chat"></div>
+</body>
+
+</html>
+

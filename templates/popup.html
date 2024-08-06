@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Design</title>
+    <style>
+        body {
+            background-color: #F6F7FA;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .form-container {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            width: 400px;
+            max-width: 100%;
+            text-align: center;
+        }
+        .form-container h1 {
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+        .form-container h1 span {
+            color: #5200FF; /* Replace with your desired color for "Today" */
+        }
+        .form-container p {
+            margin-bottom: 20px;
+            color: gray;
+        }
+        .form-container label {
+            display: block;
+            text-align: left;
+            margin: 10px 0 5px 0;
+            color: black;
+            font-weight: normal;
+        }
+        .form-container input, .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #5200FF; /* Replace with your desired button color */
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .form-container button:hover {
+            background-color: #5200FF; /* Darken button color on hover */
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h1>Get Connected <span>Today</span></h1>
+    <p>By Submitting Your Information You're Taking Great Steps!</p>
+    <form id="inquiry-form">
+        <label for="full-name">Full Name</label>
+        <input type="text" id="full-name" name="fullName" placeholder="Full Name" required>
+        
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Email" required>
+        
+        <label for="phone">Phone</label>
+        <input type="tel" id="phone" name="phone" placeholder="Phone" required>
+        
+        <label for="delivery-note">More Info</label>
+        <textarea id="delivery-note" name="deliveryNote" placeholder="Delivery note" rows="4" required></textarea>
+        
+        <button type="submit">Submit Inquiry</button>
+    </form>
+</div>
+
+<script>
+    document.getElementById('inquiry-form').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const fullName = document.getElementById('full-name').value;
+        const email = document.getElementById('email').value;
+        const phone = document.getElementById('phone').value;
+        const deliveryNote = document.getElementById('delivery-note').value;
+
+        console.log('Form Submitted:', { fullName, email, phone, deliveryNote });
+
+        // Here you can handle form submission, e.g., sending data to a server
+    });
+</script>
+
+</body>
+</html>

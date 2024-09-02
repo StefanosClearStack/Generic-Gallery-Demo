@@ -102,5 +102,16 @@
    <a href="tel:+15599991530" id="callButton">
     <button style="padding: 10px 20px; font-size: 16px;">Call 559-999-1530</button>
 </a>
+
+<button onclick="triggerCall()" style="padding: 10px 20px; font-size: 16px;">
+  Call 559-999-1530 (Auto)
+</button>
+
+<script>
+  // Function that triggers the call
+  function triggerCall() {
+      window.location.href = "tel:+15599991530";
+  }
+</script>
 </body>
 </html>

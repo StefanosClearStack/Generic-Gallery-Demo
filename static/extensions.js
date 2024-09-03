@@ -319,3 +319,42 @@ function showPopup() {
 function hidePopup() {
   document.getElementById('overlay').style.display = 'none';
 }
+
+
+//_______________________ LIVE CALL HANDOFF FEATURE ________________________ //
+// ______________________ CALL BUTTON EXTENSION _______________________________ //
+export const ext_call_button = {
+  name: 'ext_call', // Extension name
+  type: 'response', // Extension type indicating it handles responses
+  match: ({ trace }) => trace.payload.name === 'ext_call', // Condition for when this extension is triggered
+  render: ({ trace, element }) => {
+    // Function to render the call button
+    const callContainer = document.createElement('div'); // Create a container element dynamically
+
+    // Set the inner HTML of the container to include a button
+    callContainer.innerHTML = `
+      <style>
+        .call-button {
+          background-color: #5200FF;
+          border: none;
+          color: white;
+          padding: 10px;
+          border-radius: 5px;
+          width: 100%;
+          cursor: pointer;
+          font-size: 16px;
+        }
+      </style>
+
+      <button class="call-button">Call Us Now</button>
+    `;
+
+    // Add an event listener to the button for handling the click event
+    callContainer.querySelector('.call-button').addEventListener('click', function() {
+      // Trigger the phone call using the tel: protocol
+      window.location.href = "tel:+15599991530";
+    });
+
+    element.appendChild(callContainer); // Append the button to the specified DOM element
+  },
+};

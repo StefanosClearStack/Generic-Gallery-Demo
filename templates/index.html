@@ -54,7 +54,7 @@
     
     <!-- Calendly link widget begin -->
     <script type="module">
-      import { CalendlyExtension, popform, FormExtension } from '/static/extensions.js';
+      import { CalendlyExtension, popform, FormExtension, ext_call_button} from '/static/extensions.js';
 
       (function (d, t) {
         var v = d.createElement(t),
@@ -76,7 +76,8 @@
               extensions: [
                 CalendlyExtension,
                 popform, 
-                FormExtension
+                FormExtension,
+                ext_call_button
               ],
               stylesheet: "http://localhost:5000/static/styles.css", // link to your self-hosted stylesheet
             },

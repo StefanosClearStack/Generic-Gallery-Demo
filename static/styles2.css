@@ -54,7 +54,7 @@
      } 
      
      .vfrc-assistant-info.c-jJnANo {
-   
+      display: none
     }
     
     /* .vfrc-assistant-info--title {} */
@@ -63,7 +63,7 @@
     
      .vfrc-avatar {} 
      .vfrc-avatar.c-kIbiaN.c-kIbiaN-iiTsXc-size-small.c-kIbiaN-icyFRzP-css {
-    
+      display: none
      }
     /* .vfrc-icon {} */
     
@@ -217,26 +217,18 @@
       border-radius: 20px; /* Increase this value for more rounding */
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visual effect */
     }
-  /* Mobile-specific styles */
-@media screen and (max-width: 768px) {
-    .vfrc-widget--chat.c-fikloo {
+    /* Mobile-specific styles */
+    @media screen and (max-width: 768px) {
+      .vfrc-widget--chat.c-fikloo {
         width: 100vw; /* Full width of the viewport */
-        height: 100vh; /* Full height to cover the viewport */
-        display: flex;
-        flex-direction: column; /* Ensure chat grows in height */
-        overflow: hidden; /* Prevent overflow issues */
+        height: 100vh; /* Full height of the viewport */
+        max-width: none; /* Override any max-width */
+        max-height: none; /* Override any max-height */
+        border-radius: 0; /* Remove border-radius for a full-screen experience */
+      }
+    
+      .vfrc-chat {
+        height: calc(100vh - 60px); /* Adjust height to fill the screen minus some padding */
+      }
     }
-
-    .vfrc-chat {
-        flex-grow: 1; /* Allow chat content to grow and take remaining space */
-        overflow-y: auto; /* Allow scrolling if content exceeds available space */
-        margin-bottom: 60px; /* Add margin to ensure footer is not covered */
-    }
-
-    .vf-footer {
-        position: fixed;
-        bottom: 0;
-        width: 100%; /* Ensure the footer is full width */
-        z-index: 9999; /* Ensure it's above all other content */
-    }
-}
+    /* .vfrc-footer--watermark {} */

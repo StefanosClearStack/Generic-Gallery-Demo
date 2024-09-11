@@ -1,25 +1,28 @@
-/* use this file to override default styles when forking this repository */
-
-/*
-  PAGE CONTENTS
-
-  Customize the page that the chat bubble lives on
-*/
+/* General Styles to ensure full width and no overflow */
 html, body {
     overflow-x: hidden; /* Prevent horizontal scrolling */
     width: 100%; /* Ensure the body takes the full width of the viewport */
+    height: 100%; /* Ensure full height */
+    margin: 0;
+    padding: 0;
 }
-  
+
+/* PAGE CONTENTS */
+
 .hl_form-builder--main {
     margin-top: -90px;
     padding: 15px;
 }
-.popup.form-container{
+
+.popup.form-container {
     height: 500px;
 }
+
 .voiceflow-chat {
     height: 100px;
 }
+
+/* Chat Button (Launcher) */
 .vfrc-launcher {
     width: 135px;
     border-radius: 200px;
@@ -30,7 +33,7 @@ html, body {
     position: relative;
     height: 45px;
 }
-    
+
 .vfrc-launcher:before {
     content: "Chat With Us"; /* Text content */
     color: white;
@@ -39,171 +42,104 @@ html, body {
     font-size: 14px; /* Adjust text size */
     font-weight: bold;
 }
-    
+
 img[alt="launch"] {
     width: 20px;
     height: 20px;
     margin-right: 10px; /* Space between the logo and text */
 }
 
-/* .vfrc-chat--overlay {} */
-
-/* .vfrc-prompt {} */
-
-.vfrc-header {}
-
-.vfrc-assistant-info.c-jJnANo {}
-
-/* .vfrc-assistant-info--title {} */
-
-/* .vfrc-assistant-info--description {} */
-
-.vfrc-avatar {} 
-.vfrc-avatar.c-kIbiaN.c-kIbiaN-iiTsXc-size-small.c-kIbiaN-icyFRzP-css {}
-
-/* .vfrc-icon {} */
-
-/*
-  CHAT MESSAGE BODY
-
-  Customize the layout and display of the chat body, and the conversation's metadata
-*/
-/* Widget Chat To Do Size */
+/* Chat Widget Container */
 .vfrc-widget--chat.c-fikloo {
-    height: 650px;
-    width: 400px;
+    height: 100vh; /* Full height for mobile devices */
+    width: 100vw; /* Full width for mobile devices */
+    max-height: none; /* Remove any height restrictions */
+    max-width: none; /* Remove any width restrictions */
+    border-radius: 0; /* Remove border-radius for a full-screen experience */
+    overflow-y: auto; /* Enable vertical scrolling if necessary */
+    display: flex;
+    flex-direction: column;
 }
 
-/*  height: 150px;
-.vfrc-chat {}
-*/
-
-.vfrc-chat--dialog {}
-
-.vfrc-chat--spacer {
-    flex-grow: 0;
-    padding: 30px;
+.vfrc-header {
+    padding: 10px;
 }
 
-.vfrc-chat--session-time {
-    display: none;
+.vfrc-chat {
+    flex-grow: 1; /* Allow chat area to take up available space */
+    padding: 10px;
+    height: auto;
+    overflow-y: auto; /* Enable scrolling if content overflows */
 }
 
-/* .vfrc-chat--status {} */
-.vfrc-message {}
-
-.vfrc-message.c-gMpNkY.vfrc-message--chat.c-PJLV.c-PJLV-jueArD-from-system {
-    border-radius: 15px 15px 15px 3px; /* Top-left, top-right, bottom-right, bottom-left */
+/* Messages styling */
+.vfrc-message {
     margin: 10px 0;
-}
-.vfrc-message.c-gMpNkY.vfrc-message--chat.c-PJLV.c-PJLV-gJqBfM-from-user {
-    border-radius: 15px 15px 3px 15px; /* Top-left, top-right, bottom-right, bottom-left */
-    margin: 10px 0;
+    border-radius: 15px; /* Apply consistent border-radius */
 }
 
-/*
-  ASSISTANT RESPONSES
-
-  Customize the style and layout of assistant response messages.
-*/
-#iframe-popup {
-    width: 500px;
-    height: 500px;
-    border: none;
+.vfrc-message--chat.c-PJLV.c-PJLV-jueArD-from-system {
+    border-radius: 15px 15px 15px 3px; /* System message bubble */
 }
 
-/* .vfrc-system-response--indicator {} */
-
-.vfrc-system-response {}
+.vfrc-message--chat.c-PJLV.c-PJLV-gJqBfM-from-user {
+    border-radius: 15px 15px 3px 15px; /* User message bubble */
+}
 
 .vfrc-system-response.vfrc-message {
     background-color: black;
-}
-
-.vrfc- /* .vfrc-system-response--controls {} */
-
-/* .vfrc-system-response--list {} */
-
-/* .vfrc-system-response--actions {} */
-
-.vfrc-button {}
-
-/* .vfrc-image {} */
-
-/* .vfrc-image--background {} */
-
-/* .vfrc-card--content {} */
-
-/* .vfrc-card--header {} */
-
-/* .vfrc-card--description {} */
-
-/* .vfrc-carousel {} */
-
-/* .vfrc-carousel--button {} */
-
-/* Targeted styling for just the Assistant messages. */
-.vfrc-system-response.vfrc-message {
-    border-radius: 15px 15px 3px 15px; /* Top-left, top-right, bottom-right, bottom-left */
+    color: white;
     margin: 10px 0;
-    background-color: black;
 }
 
-/* Targeted styling for just the Assistant buttons. */
 .vfrc-system-response.vfrc-button {
     background-color: blue;
+    color: white;
+    border-radius: 8px;
+    padding: 10px 15px;
+    text-align: center;
+    display: inline-block;
+    width: auto;
+    cursor: pointer;
 }
 
-/*
-  USER RESPONSES
-
-  Customize the style and layout of users response messages.
-*/
-
-.vfrc-user-response {}
-
-/* Targeted styling for just the User messages */
-.vfrc-user-response.vfrc-message {
-    border-radius: 15px 15px 3px 15px; /* Top-left, top-right, bottom-right, bottom-left */
-    margin: 10px 0;
-}
-
-/*
-  FOOTER
-
-  Customize the layout and appearance of the message input field and the VF Branding
-*/
-
+/* Footer input styling */
 .vf-footer {
     background-color: black;
-    color: black;
+    color: white;
+    padding: 10px;
+    position: fixed; /* Ensure the footer stays fixed at the bottom */
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.2); /* Add shadow for separation */
 }
 
 .vfrc-input {
     background-color: black;
-    color: black;
+    color: white;
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px;
 }
 
+/* FORM & POPUP STYLING */
 #popup-6f72EvDPauC57dEtxrFi {
-    width: 500px; /* Set the width according to the form content */
-    height: 1000px; /* Adjust height if needed */
+    width: 100%; /* Ensure popup is responsive */
+    height: 100%; /* Full height on mobile */
     border: none;
-    border-radius: 0px;
-    overflow: hidden; /* Prevent extra content or space from showing */
-    border-radius: 20px; /* Increase this value for more rounding */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visual effect */
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
-
-.vfrc-chat-input--button {}
 
 #_builder-form.form-builder--wrap {
-    border-radius: 20px; /* Increase this value for more rounding */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visual effect */
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 #_builder-form {
-    border-radius: 20px; /* Increase this value for more rounding */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visual effect */
+    border-radius: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 /* Mobile-specific styles */
@@ -215,7 +151,7 @@ img[alt="launch"] {
         max-height: none; /* Override any max-height */
         border-radius: 0; /* Remove border-radius for a full-screen experience */
     }
-    
+
     body {
         width: 100vw; /* Full width of the viewport on mobile devices */
         overflow-x: hidden; /* Prevent horizontal scrolling on mobile devices */
@@ -225,6 +161,20 @@ img[alt="launch"] {
         height: calc(100vh - 60px); /* Adjust height to fill the screen minus some padding */
         overflow-y: auto; /* Ensure scrolling if content overflows */
     }
+    
+    /* Ensure input field at bottom is always visible */
+    .vf-footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        z-index: 9999; /* Ensure it's above other elements */
+    }
 }
 
-/* .vfrc-footer--watermark {} */
+/* Avatar styling */
+.vfrc-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 10px;
+}

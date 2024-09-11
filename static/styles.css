@@ -133,3 +133,21 @@
 /* .vfrc-chat-input--button {} */
 
 /* .vfrc-footer--watermark {} */
+
+/* Mobile styles */
+
+
+/* Mobile-specific styles */
+@media screen and (max-width: 768px) {
+  .vfrc-widget--chat.c-fikloo {
+    width: 100vw; /* Full width of the viewport */
+    height: 100vh; /* Full height of the viewport */
+    max-width: none; /* Override any max-width */
+    max-height: none; /* Override any max-height */
+    border-radius: 0; /* Remove border-radius for a full-screen experience */
+  }
+
+  .vfrc-chat {
+    height: calc(100vh - 60px); /* Adjust height to fill the screen minus some padding */
+  }
+}

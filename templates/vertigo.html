@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body {
+            background-image: url("{{ url_for('static', filename='img/main.png') }}");
+            background-size: cover; /* Ensures the image covers the entire background */
+            background-position: center; /* Centers the image */
+            background-repeat: no-repeat; /* Prevents tiling */
+            height: 100vh; /* Full height */
+            margin: 0; /* Remove default margin */
+            padding: 0; /* Remove default padding */
+        }
+    </style>
+</head>
+<body>
+ <!-- Calendly Link-->
+ <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+ <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async=""></script>
+     <!-- Calendly link widget begin -->
+     <script type="module">
+        import { ext_get_pricing, ext_call_button, CalendlyExtension } from '/static/extensions2.js';
+  
+        (function (d, t) {
+          var v = d.createElement(t),
+            s = d.getElementsByTagName(t)[0];
+          v.onload = function () {
+            window.voiceflow.chat.load({
+              verify: { projectID: '66d6368a7f0b84ecf051538b' },
+              url: 'https://general-runtime.voiceflow.com',
+              versionID: 'production',
+              
+              
+              user: {
+                name: 'Demo User',
+              },
+              render: {
+                mode: 'overlay',
+              },
+              autostart: false,
+              allowDangerousHTML: true,
+              assistant: {
+                extensions: [
+                 ext_get_pricing, 
+                 ext_call_button,
+                 CalendlyExtension
+                ],
+                stylesheet: "http://localhost:5000/static/styles2.css", // link to your self-hosted stylesheet
+              },
+            });
+          };
+          v.src = 'https://cdn.voiceflow.com/widget/bundle.mjs';
+          v.type = 'text/javascript';
+          s.parentNode.insertBefore(v, s);
+        })(document, 'script');
+      </script>
+      <!-- Pricing Form Embedded -->
+    
+</body>
+</html>

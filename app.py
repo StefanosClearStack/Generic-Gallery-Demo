@@ -15,5 +15,12 @@ def embedded():
 @app.route('/mobile')
 def mobile():
     return render_template('mobile.html')
+
+
+@app.route('/vertigo')
+def vertigo():
+    return render_template('vertigo.html')
+
+
 if __name__ == '__main__':
     app.run(debug=True)

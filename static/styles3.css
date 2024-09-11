@@ -217,18 +217,20 @@
       border-radius: 20px; /* Increase this value for more rounding */
       box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Optional: Add shadow for better visual effect */
     }
-    /* Mobile-specific styles */
-    @media screen and (max-width: 768px) {
-      .vfrc-widget--chat.c-fikloo {
-        width: 100vw; /* Full width of the viewport */
-        height: 100vh; /* Full height of the viewport */
-        max-width: none; /* Override any max-width */
-        max-height: none; /* Override any max-height */
-        border-radius: 0; /* Remove border-radius for a full-screen experience */
-      }
-    
-      .vfrc-chat {
-        height: calc(100vh - 60px); /* Adjust height to fill the screen minus some padding */
-      }
+/* Mobile-specific styles */
+@media screen and (max-width: 768px) {
+    .vfrc-widget--chat.c-fikloo {
+      width: 100vw; /* Full width of the viewport */
+      height: 100dvh; /* Full dynamic height of the viewport */
+      max-width: none; /* Override any max-width */
+      max-height: none; /* Override any max-height */
+      border-radius: 0; /* Remove border-radius for a full-screen experience */
+      overflow: hidden; /* Ensure no overflow on smaller screens */
     }
-    /* .vfrc-footer--watermark {} */
+  
+    .vfrc-chat {
+      height: calc(100dvh - 60px); /* Adjust height to fill the screen minus some padding */
+      overflow: auto; /* Allow scrolling if the chat content overflows */
+    }
+  }
+  

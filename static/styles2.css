@@ -5,6 +5,11 @@
 
   Customize the page that the chat bubble lives on
 */
+html, body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    width: 100%; /* Ensure the body takes the full width of the viewport */
+  }
+  
 .hl_form-builder--main {
     margin-top: -90px;
     padding: 15px;
@@ -226,7 +231,12 @@
         max-height: none; /* Override any max-height */
         border-radius: 0; /* Remove border-radius for a full-screen experience */
       }
-    
+      @media screen and (max-width: 768px) {
+        body {
+          width: 100vw; /* Full width of the viewport on mobile devices */
+          overflow-x: hidden; /* Prevent horizontal scrolling on mobile devices */
+        }
+      }
       .vfrc-chat {
         height: calc(100vh - 60px); /* Adjust height to fill the screen minus some padding */
       }

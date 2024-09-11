@@ -17,3 +17,31 @@
     font-size: 14px; /* Adjust text size */
     font: bold
   }
+
+  img[alt="launch"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px; /* Space between the logo and text */
+  }
+  .vfrc-message.c-gMpNkY.vfrc-message--chat.c-PJLV.c-PJLV-jueArD-from-system{
+    border-radius: 15px 15px 15px 3px; /* Top-left, top-right, bottom-right, bottom-left */
+    margin: 10px 0;
+  }
+  .vfrc-message.c-gMpNkY.vfrc-message--chat.c-PJLV.c-PJLV-gJqBfM-from-user{
+    border-radius: 15px 15px 3px 15px; /* Top-left, top-right, bottom-right, bottom-left */
+    margin: 10px 0;
+  }
+   /* Targeted styling for just the Assistant messages. */
+   .vfrc-system-response.vfrc-message {
+    border-radius: 15px 15px 3px 15px; /* Top-left, top-right, bottom-right, bottom-left */
+    margin: 10px 0;
+    background-color: black;
+  
+   }  
+
+    /* Targeted styling for just the User messages */
+    .vfrc-user-response.vfrc-message {
+        border-radius: 15px 15px 3px 15px; /* Top-left, top-right, bottom-right, bottom-left */
+        margin: 10px 0;
+      } 
+      

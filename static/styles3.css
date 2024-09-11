@@ -1,0 +1,19 @@
+ .vfrc-launcher {
+    width: 135px;
+    border-radius: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 5px 15px;
+    position: relative;
+    height: 45px;
+   }
+  
+  .vfrc-launcher:before {
+    content: "Chat With Us"; /* Text content */
+    color: white;
+    position: absolute; /* Absolute positioning */
+    right: 15px; /* Align text to the right edge of the button */
+    font-size: 14px; /* Adjust text size */
+    font: bold
+  }

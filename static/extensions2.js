@@ -317,7 +317,7 @@ export const ext_call_button = {
           }
         </style>
   
-        <button class="call-button">Call Us Now</button>
+        <button class="call-button">Connect Now with Live Agent</button>
       `;
   
       // Add an event listener to the button for handling the click event
@@ -377,13 +377,6 @@ export const ext_call_button = {
       formIframe.style.display = "block";
     }
   }
-  
-  
-  
-  
-  
-  
-  
   
   export const CalendlyExtension = {
     name: "Calendly",

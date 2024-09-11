@@ -5,6 +5,11 @@
 
   Customize the page that the chat bubble lives on
 */
+html, body {
+    overflow-x: hidden; /* Prevent horizontal scrolling */
+    width: 100%; /* Ensure the body takes the full width of the viewport */
+  }
+  
 .hl_form-builder--main {
     margin-top: -90px;
     padding: 15px;
@@ -54,7 +59,7 @@
      } 
      
      .vfrc-assistant-info.c-jJnANo {
-      display: none
+      
     }
     
     /* .vfrc-assistant-info--title {} */
@@ -63,7 +68,7 @@
     
      .vfrc-avatar {} 
      .vfrc-avatar.c-kIbiaN.c-kIbiaN-iiTsXc-size-small.c-kIbiaN-icyFRzP-css {
-      display: none
+    
      }
     /* .vfrc-icon {} */
     
@@ -78,8 +83,9 @@
       width: 400px;
     
     }
+    /*  height: 150px; */
     .vfrc-chat {
-    height: 150px;
+   
     
     } 
     
@@ -87,9 +93,10 @@
     
     } 
     
+    /* flex-grow: 0;
+      padding: 30px */
      .vfrc-chat--spacer {
-      flex-grow: 0;
-      padding: 30px
+      
      } 
     
     .vfrc-chat--session-time {
@@ -129,14 +136,14 @@
     .vfrc-system-response.vfrc-message{
       background-color: black;
     }
-    .vrfc-
+    
     /* .vfrc-system-response--controls {} */
     
     /* .vfrc-system-response--list {} */
     
     /* .vfrc-system-response--actions {} */
     
-     .vfrc-button {} */
+     .vfrc-button {} 
     
     /* .vfrc-image {} */
     
@@ -195,6 +202,7 @@
      .vfrc-input {
       background-color: black;
       color: black
+      
      } 
      #popup-6f72EvDPauC57dEtxrFi {
       width: 500px; /* Set the width according to the form content */
@@ -226,7 +234,12 @@
         max-height: none; /* Override any max-height */
         border-radius: 0; /* Remove border-radius for a full-screen experience */
       }
-    
+      @media screen and (max-width: 768px) {
+        body {
+          width: 100vw; /* Full width of the viewport on mobile devices */
+          overflow-x: hidden; /* Prevent horizontal scrolling on mobile devices */
+        }
+      }
       .vfrc-chat {
         height: calc(100vh - 60px); /* Adjust height to fill the screen minus some padding */
       }

@@ -119,44 +119,43 @@
 /* Ensure the body does not add extra height */
 /* Prevent overflow on the entire page */
 html, body {
-    margin: 0;
-    padding: 0;
-    height: 100%;
-    overflow: hidden; /* Disable body scrolling */
-  }
-  
-  /* Ensure the chat container occupies the full height of the page */
-  .vfrc-chat {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    max-height: 100vh; /* Ensure it stays within the viewport */
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-  }
-  
-  /* Chat dialog content should scroll internally */
-  .vfrc-chat--dialog {
-    flex: 1;
-    max-height: calc(100vh - 60px); /* Adjust based on your footer/header height */
-    overflow-y: auto; /* Internal scrolling */
-  }
-  
-  /* Fix the footer at the bottom */
-  .vfrc-footer {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 60px; /* Set this to your footer's height */
-    background-color: #fff; /* Adjust background color */
-    z-index: 1000; /* Ensure it stays above other elements */
-  }
-  
-  /* Optional: Add padding to the chat body to ensure content isn't hidden behind the footer */
-  .vfrc-chat--dialog {
-    padding-bottom: 60px; /* Matches the footer height */
-  }
-  
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden; /* Disable body scrolling */
+}
+
+/* Ensure the chat container occupies the full height of the page */
+.vfrc-chat {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  max-height: 100vh; /* Ensure it stays within the viewport */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+/* Chat dialog content should scroll internally */
+.vfrc-chat--dialog {
+  flex: 1;
+  max-height: calc(100vh - 60px); /* Adjust based on your footer/header height */
+  overflow-y: auto; /* Internal scrolling */
+}
+
+/* Fix the footer at the bottom */
+.vfrc-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px; /* Set this to your footer's height */
+  background-color: #fff; /* Adjust background color */
+  z-index: 1000; /* Ensure it stays above other elements */
+}
+
+/* Optional: Add padding to the chat body to ensure content isn't hidden behind the footer */
+.vfrc-chat--dialog {
+  padding-bottom: 60px; /* Matches the footer height */
+}

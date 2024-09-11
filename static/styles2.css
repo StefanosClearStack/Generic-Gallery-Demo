@@ -59,7 +59,7 @@ html, body {
      } 
      
      .vfrc-assistant-info.c-jJnANo {
-      display: none
+      
     }
     
     /* .vfrc-assistant-info--title {} */
@@ -68,7 +68,7 @@ html, body {
     
      .vfrc-avatar {} 
      .vfrc-avatar.c-kIbiaN.c-kIbiaN-iiTsXc-size-small.c-kIbiaN-icyFRzP-css {
-      display: none
+    
      }
     /* .vfrc-icon {} */
     
@@ -83,8 +83,9 @@ html, body {
       width: 400px;
     
     }
+    /*  height: 150px; */
     .vfrc-chat {
-    height: 150px;
+   
     
     } 
     
@@ -92,9 +93,10 @@ html, body {
     
     } 
     
+    /* flex-grow: 0;
+      padding: 30px */
      .vfrc-chat--spacer {
-      flex-grow: 0;
-      padding: 30px
+      
      } 
     
     .vfrc-chat--session-time {
@@ -134,14 +136,14 @@ html, body {
     .vfrc-system-response.vfrc-message{
       background-color: black;
     }
-    .vrfc-
+    
     /* .vfrc-system-response--controls {} */
     
     /* .vfrc-system-response--list {} */
     
     /* .vfrc-system-response--actions {} */
     
-     .vfrc-button {} */
+     .vfrc-button {} 
     
     /* .vfrc-image {} */
     
@@ -200,6 +202,7 @@ html, body {
      .vfrc-input {
       background-color: black;
       color: black
+      
      } 
      #popup-6f72EvDPauC57dEtxrFi {
       width: 500px; /* Set the width according to the form content */

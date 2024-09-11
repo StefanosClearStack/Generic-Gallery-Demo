@@ -1,0 +1,155 @@
+/* use this file to override default styles when forking this repository */
+
+/*
+  PAGE CONTENTS
+
+  Customize the page that the chat bubble lives on
+*/
+
+/* .voiceflow-chat {} */
+
+/* .vfrc-launcher {} */
+
+/* .vfrc-chat--overlay {} */
+
+/* .vfrc-prompt {} */
+
+/*
+  CHAT WIDGET HEADER
+
+  Customize the content, controls and styling included in your chat widget header, including the Assistant Information.
+  Note that changes to the assistant information here will be shared across other elements that consume this styling.
+*/
+
+/* .vfrc-header {} */
+
+/* .vfrc-assistant-info {} */
+
+/* .vfrc-assistant-info--title {} */
+
+/* .vfrc-assistant-info--description {} */
+
+/* .vfrc-avatar {} */
+
+/* .vfrc-icon {} */
+
+/*
+  CHAT MESSAGE BODY
+
+  Customize the layout and display of the chat body, and the conversation's metadata
+*/
+
+/* .vfrc-chat {} */
+
+/* .vfrc-chat--dialog {} */
+
+/* .vfrc-chat--spacer {} */
+
+/* .vfrc-chat--session-time {} */
+
+/* .vfrc-chat--status {} */
+
+/* .vfrc-message {} */
+
+/* .vfrc-timestamp {} */
+
+/*
+  ASSISTANT RESPONSES
+
+  Customize the style and layout of assistant response messages.
+*/
+
+/* .vfrc-system-response--indicator {} */
+
+/* .vfrc-system-response {} */
+
+/* .vfrc-system-response--controls {} */
+
+/* .vfrc-system-response--list {} */
+
+/* .vfrc-system-response--actions {} */
+
+/* .vfrc-button {} */
+
+/* .vfrc-image {} */
+
+/* .vfrc-image--background {} */
+
+/* .vfrc-card--content {} */
+
+/* .vfrc-card--header {} */
+
+/* .vfrc-card--description {} */
+
+/* .vfrc-carousel {} */
+
+/* .vfrc-carousel--button {} */
+
+/* Targeted styling for just the Assistant messages. */
+/* .vfrc-system-response .vfrc-message {} */
+
+/* Targeted styling for just the Assistant buttons. */
+/* .vfrc-system-response .vfrc-button {} */
+
+/*
+  USER RESPONSES
+
+  Customize the style and layout of users response messages.
+*/
+
+/* .vfrc-user-response {} */
+
+/* Targeted styling for just the User messages */
+/* .vfrc-user-response .vfrc-message {} */
+
+/*
+  FOOTER
+
+  Customize the layout and appearance of the message input field and the VF Branding
+*/
+
+/* .vf-footer {} */
+
+/* .vfrc-input {} */
+
+/* .vfrc-chat-input--button {} */
+
+/* .vfrc-footer--watermark {} */
+
+/* Ensure the body does not add extra height */
+body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Disable page scrolling */
+  }
+  
+  /* Adjust the chat widget to fit within the viewport */
+  .vfrc-chat {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    max-height: 100vh; /* Ensures it doesn't exceed screen height */
+    overflow-y: auto; /* Enable internal scrolling if necessary */
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Limit the height of the chat body */
+  .vfrc-chat--dialog {
+    flex: 1;
+    max-height: calc(100vh - 60px); /* Adjust this value if you have a header */
+    overflow-y: auto;
+  }
+  
+  /* Handle chat input without adding height below */
+  .vfrc-footer--input {
+    flex-shrink: 0;
+    max-height: 60px; /* Adjust this value for the input field height */
+  }
+  
+  /* Ensure no additional height on mobile when scrolling */
+  html, body {
+    height: 100%;
+    overflow: hidden;
+  }
+  

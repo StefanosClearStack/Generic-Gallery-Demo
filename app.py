@@ -22,7 +22,7 @@ def vertigo():
     return render_template('vertigo.html')
 
 @app.route('/test')
-def vertigo():
+def test():
     return render_template('test.html')
 
 

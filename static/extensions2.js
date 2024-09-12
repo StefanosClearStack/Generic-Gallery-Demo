@@ -503,7 +503,7 @@ export const ext_call_button = {
   // }
   
 
-  // ______________________ FORM EXTENSIONS _______________________________ //
+  // ______________________// ______________________ FORM EXTENSIONS _______________________________ //
 export const ext_get_pricing = {
   name: 'ext_get_pricing', // Extension name
   type: 'response', // Extension type indicating it handles responses
@@ -516,7 +516,7 @@ export const ext_get_pricing = {
     iframeContainer.innerHTML = `
       <iframe
         src="https://api.leadconnectorhq.com/widget/form/TZsYznKT6TK2M7ZuD3tz"
-        style="width:100%;max-width:550px;height:890px;border:none;border-radius:4px;margin:0 auto;display:block;"
+        style="width:90%;max-width:500px;height:890px;border:none;border-radius:4px;margin:0;padding:0;display:block;"
         id="inline-TZsYznKT6TK2M7ZuD3tz" 
         data-layout="{'id':'INLINE'}"
         data-trigger-type="alwaysShow"

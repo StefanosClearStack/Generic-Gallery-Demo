@@ -409,96 +409,132 @@ export const ext_call_button = {
     },
   };
   // __________________ POP FORM _________________________________________ //
-  export const ext_get_pricing = {
-    name: 'Forms',
-    type: 'response',
-    match: ({ trace }) =>
-      trace.type === 'ext_get_pricing' || trace.payload.name === 'ext_get_pricing',
-    render: ({ trace, element }) => {
-      createFormPopup();
-      showPopup();
-    },
-  };function createFormPopup() {
-    // Check if popup already exists
-    if (document.getElementById('overlay')) {
-      return;
-    }
+  // export const ext_get_pricing = {
+  //   name: 'Forms',
+  //   type: 'response',
+  //   match: ({ trace }) =>
+  //     trace.type === 'ext_get_pricing' || trace.payload.name === 'ext_get_pricing',
+  //   render: ({ trace, element }) => {
+  //     createFormPopup();
+  //     showPopup();
+  //   },
+  // };function createFormPopup() {
+  //   // Check if popup already exists
+  //   if (document.getElementById('overlay')) {
+  //     return;
+  //   }
   
-    // Create overlay
-    const overlay = document.createElement('div');
-    overlay.id = 'overlay';
-    overlay.style.position = 'fixed';
-    overlay.style.top = '0';
-    overlay.style.left = '0';
-    overlay.style.width = '100%';
-    overlay.style.height = '100%';
-    overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-    overlay.style.zIndex = '10000'; // Ensure overlay is on top
-    overlay.style.display = 'flex';
-    overlay.style.justifyContent = 'center';
-    overlay.style.alignItems = 'center';
-    document.body.appendChild(overlay);
+  //   // Create overlay
+  //   const overlay = document.createElement('div');
+  //   overlay.id = 'overlay';
+  //   overlay.style.position = 'fixed';
+  //   overlay.style.top = '0';
+  //   overlay.style.left = '0';
+  //   overlay.style.width = '100%';
+  //   overlay.style.height = '100%';
+  //   overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+  //   overlay.style.zIndex = '10000'; // Ensure overlay is on top
+  //   overlay.style.display = 'flex';
+  //   overlay.style.justifyContent = 'center';
+  //   overlay.style.alignItems = 'center';
+  //   document.body.appendChild(overlay);
   
-    // Create popup
-    const popup = document.createElement('div');
-    popup.id = 'popup';
-    popup.className = 'form-container'; // Add class for styling
-    popup.style.zIndex = '10001'; // Ensure popup is above overlay
-    popup.style.width = '400px'; // Set the container width as needed
-    popup.style.backgroundColor = 'white'; // Ensure the container has a white background
-    popup.style.borderRadius = '10px'; // Same rounded corner style as before
-    popup.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.1)';
-    popup.style.padding = '30px';
-    popup.style.height = '500px';
-    overlay.appendChild(popup);
+  //   // Create popup
+  //   const popup = document.createElement('div');
+  //   popup.id = 'popup';
+  //   popup.className = 'form-container'; // Add class for styling
+  //   popup.style.zIndex = '10001'; // Ensure popup is above overlay
+  //   popup.style.width = '400px'; // Set the container width as needed
+  //   popup.style.backgroundColor = 'white'; // Ensure the container has a white background
+  //   popup.style.borderRadius = '10px'; // Same rounded corner style as before
+  //   popup.style.boxShadow = '0 0 10px rgba(0, 0, 0, 0.1)';
+  //   popup.style.padding = '30px';
+  //   popup.style.height = '500px';
+  //   overlay.appendChild(popup);
   
-    // Embed the new form inside the popup
-    const iframe = document.createElement('iframe');
-    iframe.src = "https://api.leadconnectorhq.com/widget/form/6f72EvDPauC57dEtxrFi";
-    iframe.style.width = '100%';
-    iframe.style.height = '100%'; // Set iframe to take full popup height
-    iframe.style.border = 'none';
-    iframe.style.borderRadius = '0px';
-    iframe.id = 'inline-6f72EvDPauC57dEtxrFi';
-    iframe.setAttribute('data-layout', '{"id":"INLINE"}');
-    iframe.setAttribute('data-trigger-type', 'alwaysShow');
-    iframe.setAttribute('data-activation-type', 'alwaysActivated');
-    iframe.setAttribute('data-deactivation-type', 'neverDeactivate');
-    iframe.title = 'Pricing Pamphlet Capture Form -';
+  //   // Embed the new form inside the popup
+  //   const iframe = document.createElement('iframe');
+  //   iframe.src = "https://api.leadconnectorhq.com/widget/form/6f72EvDPauC57dEtxrFi";
+  //   iframe.style.width = '100%';
+  //   iframe.style.height = '100%'; // Set iframe to take full popup height
+  //   iframe.style.border = 'none';
+  //   iframe.style.borderRadius = '0px';
+  //   iframe.id = 'inline-6f72EvDPauC57dEtxrFi';
+  //   iframe.setAttribute('data-layout', '{"id":"INLINE"}');
+  //   iframe.setAttribute('data-trigger-type', 'alwaysShow');
+  //   iframe.setAttribute('data-activation-type', 'alwaysActivated');
+  //   iframe.setAttribute('data-deactivation-type', 'neverDeactivate');
+  //   iframe.title = 'Pricing Pamphlet Capture Form -';
   
-    popup.appendChild(iframe);
+  //   popup.appendChild(iframe);
   
-    // Add event listeners
-    overlay.addEventListener('click', function(event) {
-      if (event.target === overlay) {
-        hidePopup();
-      }
-    });
+  //   // Add event listeners
+  //   overlay.addEventListener('click', function(event) {
+  //     if (event.target === overlay) {
+  //       hidePopup();
+  //     }
+  //   });
   
-    // Inject custom styles for the form popup
-    const style = document.createElement('style');
-    style.innerHTML = `
-      body {
-        background-color: #F6F7FA;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        margin: 0;
-        font-family: Arial, sans-serif;
-      }
-      .form-container {
-        background-color: white;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        padding: 30px;
-        width: 400px;
-        max-width: 100%;
-        text-align: center;
-        position: relative;
-        z-index: 10001; /* Ensure the form is always on top */
-      }
+  //   // Inject custom styles for the form popup
+  //   const style = document.createElement('style');
+  //   style.innerHTML = `
+  //     body {
+  //       background-color: #F6F7FA;
+  //       display: flex;
+  //       justify-content: center;
+  //       align-items: center;
+  //       height: 100vh;
+  //       margin: 0;
+  //       font-family: Arial, sans-serif;
+  //     }
+  //     .form-container {
+  //       background-color: white;
+  //       border-radius: 10px;
+  //       box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  //       padding: 30px;
+  //       width: 400px;
+  //       max-width: 100%;
+  //       text-align: center;
+  //       position: relative;
+  //       z-index: 10001; /* Ensure the form is always on top */
+  //     }
+  //   `;
+  //   document.head.appendChild(style);
+  // }
+  
+
+  // ______________________ FORM EXTENSIONS _______________________________ //
+export const ext_get_pricing = {
+  name: 'ext_get_pricing', // Extension name
+  type: 'response', // Extension type indicating it handles responses
+  match: ({ trace }) => trace.payload.name === 'ext_get_pricing', // Condition for when this extension is triggered
+  render: ({ trace, element }) => {
+    // Create a container for the iframe
+    const iframeContainer = document.createElement('div');
+
+    // Set the inner HTML with the iframe and necessary configurations
+    iframeContainer.innerHTML = `
+      <iframe
+        src="https://api.leadconnectorhq.com/widget/form/TZsYznKT6TK2M7ZuD3tz"
+        style="width:100%;max-width:550px;height:890px;border:none;border-radius:4px;margin:0 auto;display:block;"
+        id="inline-TZsYznKT6TK2M7ZuD3tz" 
+        data-layout="{'id':'INLINE'}"
+        data-trigger-type="alwaysShow"
+        data-trigger-value=""
+        data-activation-type="alwaysActivated"
+        data-activation-value=""
+        data-deactivation-type="neverDeactivate"
+        data-deactivation-value=""
+        data-form-name="Pricing Pamphlet Capture Form - Stefanos"
+        data-height="890"
+        data-layout-iframe-id="inline-TZsYznKT6TK2M7ZuD3tz"
+        data-form-id="TZsYznKT6TK2M7ZuD3tz"
+        title="Pricing Pamphlet Capture Form - Stefanos"
+      ></iframe>
+      <script src="https://link.msgsndr.com/js/form_embed.js"></script>
     `;
-    document.head.appendChild(style);
-  }
-  
+
+    // Append the iframe to the specified DOM element
+    element.appendChild(iframeContainer);
+  },
+};

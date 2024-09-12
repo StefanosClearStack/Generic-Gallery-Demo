@@ -21,6 +21,10 @@ def mobile():
 def vertigo():
     return render_template('vertigo.html')
 
+@app.route('/test')
+def vertigo():
+    return render_template('test.html')
+
 
 if __name__ == '__main__':
     app.run(debug=True)

@@ -1,27 +1,29 @@
- .vfrc-launcher {
-    width: 135px;
-    border-radius: 200px;
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    position: relative;
-    height: 45px;
-   }
-  
-  .vfrc-launcher:before {
-    content: "Chat With Us"; /* Text content */
-    color: white;
-    position: absolute; /* Absolute positioning */
-    right: 15px; /* Align text to the right edge of the button */
-    font-size: 14px; /* Adjust text size */
-    font: bold
-  }
+.vfrc-launcher {
+  width: 135px;
+  border-radius: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 5px 15px;
+  position: relative;
+  height: 45px;
+ }
 
-  img[alt="launch"] {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px; /* Space between the logo and text */
-  }
+.vfrc-launcher:before {
+  content: "Chat With Us"; /* Text content */
+  color: white;
+  position: absolute; /* Absolute positioning */
+  right: 15px; /* Align text to the right edge of the button */
+  font-size: 14px; /* Adjust text size */
+  font: bold
+}
+
+img[alt="launch"] {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px; /* Space between the logo and text */
+}
+
   .vfrc-message.c-gMpNkY.vfrc-message--chat.c-PJLV.c-PJLV-jueArD-from-system{
     border-radius: 15px 15px 15px 3px; /* Top-left, top-right, bottom-right, bottom-left */
     margin: 10px 0;
@@ -43,4 +45,8 @@
         border-radius: 15px 15px 3px 15px; /* Top-left, top-right, bottom-right, bottom-left */
         margin: 10px 0;
       } 
+      .vfrc-widget--chat.c-fikloo {
+        height: 650px;
+        width: 400px;
       
+      }

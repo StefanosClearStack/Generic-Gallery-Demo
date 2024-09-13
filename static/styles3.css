@@ -45,8 +45,8 @@ img[alt="launch"] {
         border-radius: 15px 15px 3px 15px; /* Top-left, top-right, bottom-right, bottom-left */
         margin: 10px 0;
       } 
-      .vfrc-widget--chat.c-fikloo {
+    .vfrc-widget--chat.c-fikloo {
         height: 650px;
-        width: 400px;
+        width: 440px;
       
       }
